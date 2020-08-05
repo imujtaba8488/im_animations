@@ -13,13 +13,13 @@ animation widgets.
 
 ## List of Animations
 
-* Fade.
+* __Fade:__ Fades its child in or out.
 
-* HeartBeat.
+* __HeartBeat:__ Applies a heartbeat effect to its child.
 
-* Rotate.
+* __Rotate:__ Rotates its child clockwise or anti-clockwise.
 
-* Sonar.
+* __Sonar:__ Shows sonar wave pattern around its child.
 
 ### Usage Notes
 
