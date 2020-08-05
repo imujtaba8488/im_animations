@@ -35,7 +35,6 @@ Also, don't forget to hit the like button.
 
 ## Screenshots
 
-![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif)
-![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
+![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif) ![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
 ![rotate_01](https://github.com/imujtaba8488/showcase/blob/master/rotate_01.gif)
 ![sonar_01](https://github.com/imujtaba8488/showcase/blob/master/sonar_01.gif)
