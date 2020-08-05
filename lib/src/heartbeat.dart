@@ -37,9 +37,7 @@ class _HeartBeatState extends State<HeartBeat>
             : 857,
       ),
     )..addListener(() {
-        setState(() {
-
-        });
+        setState(() {});
       });
 
     // Equivalent to zooming in the child at the specified interval.

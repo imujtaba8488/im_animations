@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LeftIn extends StatefulWidget {
   final double inValue;
 
-  LeftIn({double inValue = 100.0}): inValue = inValue;
+  LeftIn({double inValue = 100.0}) : inValue = inValue;
 
   @override
   State<StatefulWidget> createState() {

@@ -33,8 +33,31 @@ Also, don't forget to hit the like button.
 
 ## Properties (Attributes)
 
+| Animation | Property           | Description                                                 | Default  Value              |
+|-----------|--------------------|-------------------------------------------------------------|-----------------------------|
+| Fade      | duration           | The duration of the fade effect.                            | 1000 milliseconds           |
+|           | fadeEffect         | Whether to fade-in or fade-out                              | FadeEffect.fadeIn           |
+|           | child              | The item to fade.                                           |              -              |
+|           |                    |                                                             |                             |
+| HeartBeat | beatsPerMinute     | The number of times the child should beat per minute.       | 70 times.                   |
+|           | child              | The item to apply the heartbeat effect to.                  |              -              |
+|           |                    |                                                             |                             |
+| Rotate    | rotationsPerMinute | The number of times the child should rotate per minute.     | 70 times.                   |
+|           | repeat             | Whether to loop rotation or not                             | false                       |
+|           | rotationDirection  | The direction in which to rotate the child                  | RotationDirection.clockwise |
+|           | child              | The item to rotate.                                         |                             |
+|           |                    |                                                             |                             |
+| Sonar     | radius             | The radius of the sonar widget, including its waves         | 24.0                        |
+|           | waveThickness      | The thickness of the sonar waves.                           | 0.5                         |
+|           | waveColor          | Color of the sonar waves                                    | Blue                        |
+|           | duration           | Determines how fast or slow the sonar waves should transmit | 1 second                    |
+|           | wavesDisabled      | Whether to disable the sonar waves or not                   | false                       |
+|           | insets             | Padding round the child widget.                             | 0.0                         |
+|           | child              | The item to be placed inside the sonar waves                |              -              |
+
 ## Screenshots
 
-![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif) ![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
+![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif)
+![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
 ![rotate_01](https://github.com/imujtaba8488/showcase/blob/master/rotate_01.gif)
 ![sonar_01](https://github.com/imujtaba8488/showcase/blob/master/sonar_01.gif)

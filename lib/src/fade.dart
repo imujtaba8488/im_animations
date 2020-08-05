@@ -50,7 +50,7 @@ class _FadeState extends State<Fade> with SingleTickerProviderStateMixin {
   @override
   void didUpdateWidget(Fade oldWidget) {
     _fadeAnimation.reset();
-    
+
     widget.fadeEffect == FadeEffect.fadeIn
         ? _fadeAnimation.forward(from: 0.0).orCancel
         : _fadeAnimation.reverse(from: 1.0).orCancel;
