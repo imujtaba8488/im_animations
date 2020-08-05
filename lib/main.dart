@@ -45,12 +45,11 @@ class Homepage extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.all(5.0),
-                child: Fade(
-  
+                child: Sonar(
+                  radius: 100,
                   child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/avatars/man.png'),
-                    radius: 50
-                  ),
+                      backgroundImage: AssetImage('assets/avatars/man.png'),
+                      radius: 100),
                 ),
               ),
             ],

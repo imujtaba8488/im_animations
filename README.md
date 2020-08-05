@@ -23,7 +23,7 @@ animation widgets.
 
 ### Usage Notes
 
-Simply import `package:im_stepper/stepper.dart` and choose any animation.
+Simply import `package:im_animations/im_animations.dart` and use any animation.
 
 ## Feedback
 
@@ -35,6 +35,7 @@ Also, don't forget to hit the like button.
 
 ## Screenshots
 
-![icon_stepper_01](https://github.com/imujtaba8488/showcase/blob/master/icon_stepper_01.gif)
-![icon_stepper_02](https://github.com/imujtaba8488/showcase/blob/master/icon_stepper_02.gif)
-![icon_stepper_03](https://github.com/imujtaba8488/showcase/blob/master/icon_stepper_03.gif)
+![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif)
+![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
+![rotate_01](https://github.com/imujtaba8488/showcase/blob/master/rotate_01.gif)
+![sonar_01](https://github.com/imujtaba8488/showcase/blob/master/sonar_01.gif)
