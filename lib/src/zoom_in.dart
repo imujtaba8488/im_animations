@@ -1,8 +1,14 @@
 import 'package:flutter/cupertino.dart';
 
+/// A widget which zooms-in it's child. The zoom-in effect can take place only once or can be set to repeat using the [repeat] property.
 class ZoomIn extends StatefulWidget {
+  /// The child to be zoomed-in.
   final Widget child;
+
+  /// Controls how fast or slow the zoom-in effect should be.
   final int duration;
+
+  /// Whether to indefinitely repeat the zoom-in effect or not.
   final bool repeat;
 
   ZoomIn({
@@ -15,53 +21,50 @@ class ZoomIn extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return ZoomInState();
+    return _ZoomInState();
   }
 }
 
-class ZoomInState extends State<ZoomIn> with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
+class _ZoomInState extends State<ZoomIn> with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation<double> _animation;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(
-        duration: Duration(milliseconds: widget.duration), vsync: this)
-      ..addListener(() {
+    _controller = AnimationController(
+      duration: Duration(milliseconds: widget.duration),
+      vsync: this,
+    )..addListener(() {
         setState(() {});
       });
 
-    animation = CurvedAnimation(
-      parent: controller,
+    _animation = CurvedAnimation(
+      parent: _controller,
       curve: Curves.easeIn,
     );
 
-    widget.repeat ? controller.repeat() : controller.forward().orCancel;
-
-    // Since an animation could be stopped unexpectedly (e.g. the screen is
-    // dismissed), when using one of these APIs, it is safer to add the
-    // “.orCancel“. Thanks to this little trick, no exception will be thrown if
-    // the Ticker is cancelled before the controller is disposed.
+    widget.repeat ? _controller.repeat() : _controller.forward();
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   void didUpdateWidget(ZoomIn oldWidget) {
-    controller.reset();
-    controller.forward().orCancel;
     super.didUpdateWidget(oldWidget);
+
+    _controller.reset();
+    _controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
-      scale: animation.value,
+      scale: _animation.value,
       child: Container(
         child: widget.child,
       ),

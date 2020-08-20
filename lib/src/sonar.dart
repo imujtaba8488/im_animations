@@ -69,7 +69,7 @@ class _SonarState extends State<Sonar> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // If insets are applied radius takes that into consideration. This needs to be ascertained at the begining of every build.
+    // If insets are applied, radius takes that into consideration. This needs to be ascertained at the begining of every build.
     double radius = widget.radius + (widget.insets * 4);
 
     return Container(
@@ -110,16 +110,19 @@ class _WavePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    // This is the inner-most wave.
     Animation wave1 = Tween(
       begin: (size.width / 5.0) + (size.height / 5.0),
       end: (size.width / 3.5) + (size.height / 3.5),
     ).animate(controller);
 
+    // This is the middle wave.
     Animation wave2 = Tween(
       begin: (size.width / 5.0) + (size.height / 5.0),
       end: (size.width / 3.0) + (size.height / 3.0),
     ).animate(controller);
 
+    // This is the outer wave.
     Animation wave3 = Tween(
       begin: (size.width / 5.0) + (size.height / 5.0),
       end: (size.width / 2.5) + (size.height / 2.5),
@@ -133,7 +136,7 @@ class _WavePainter extends CustomPainter {
   /// Draws a wave with the given radius.
   void _drawWave(Canvas canvas, Size size, Animation radius) {
     canvas.drawCircle(
-      Offset(size.width / 2, size.height / 2),
+      Offset(size.width / 2.0, size.height / 2.0),
       radius.value,
       Paint()
         ..color = strokeColor

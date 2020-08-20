@@ -25,36 +25,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 30),
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                child: Text(
-                  "Rotate",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(5.0),
-                child: Sonar(
-                  radius: 100,
-                  child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/avatars/man.png'),
-                      radius: 100),
-                ),
-              ),
-            ],
-          ),
-        ),
+        child: Text('testing'),
       ),
     );
   }
