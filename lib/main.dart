@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:im_animations/src/sonar2.dart';
 
 import 'im_animations.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'im_animations',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -25,7 +26,9 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Text('testing'),
+        child: Center(
+          child: Sonar2(),
+        ),
       ),
     );
   }

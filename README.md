@@ -55,9 +55,11 @@ Also, don't forget to hit the like button.
 |           | insets             | Padding round the child widget.                             | 0.0                         |
 |           | child              | The item to be placed inside the sonar waves                |              -              |
 
-## Screenshots
+## Available Animations
 
-![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif)
-![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
-![rotate_01](https://github.com/imujtaba8488/showcase/blob/master/rotate_01.gif)
-![sonar_01](https://github.com/imujtaba8488/showcase/blob/master/sonar_01.gif)
+ **Animations** | **Demo**
+----------------|----------------
+ Fade           |![fade_01](https://github.com/imujtaba8488/showcase/blob/master/fade_01.gif)
+ HeartBeat      |![heartbeat_01](https://github.com/imujtaba8488/showcase/blob/master/heartbeat_01.gif)
+ Rotate         |![rotate_01](https://github.com/imujtaba8488/showcase/blob/master/rotate_01.gif)
+ Sonar          |![sonar_01](https://github.com/imujtaba8488/showcase/blob/master/sonar_01.gif)

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// A widget which repeatedly displays sonar wave pattern around its child widget. __Note:__ Dimensions of the child widget depend on the [radius] of the Sonar widget.
+/// A widget which repeatedly displays sonar wave pattern around its child widget.
 class Sonar extends StatefulWidget {
   /// The radius of the sonar widget, including its waves.
   final double radius;
@@ -69,7 +69,7 @@ class _SonarState extends State<Sonar> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // If insets are applied, radius takes that into consideration. This needs to be ascertained at the begining of every build.
+    // If insets are applied, radius takes that into consideration. This needs to be ascertained at the beginning of every build.
     double radius = widget.radius + (widget.insets * 4);
 
     return Container(
