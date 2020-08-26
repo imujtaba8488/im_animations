@@ -4,13 +4,13 @@ class ColorSonar extends StatefulWidget {
   /// The radius of the content area.
   final double contentAreaRadius;
 
-  /// Determines how far the waves should fall away from the content area.
+  /// Determines how far the waves should transmit away from the content area.
   final double waveFall;
 
-  /// Determines the motion of waves while they fall away from the content area.
+  /// Determines the motion of waves while they transmit away from the content area.
   final WaveMotion waveMotion;
 
-  /// The effect to apply to the motion of waves while they fall away from the content area.
+  /// The effect to apply to the motion of waves while they transmit away from the content area.
   final Curve waveMotionEffect;
 
   /// Determines how fast or slow the waves should transmit.
@@ -54,14 +54,14 @@ class ColorSonar extends StatefulWidget {
 
 class _ColorSonarState extends State<ColorSonar>
     with SingleTickerProviderStateMixin {
-  AnimationController animationController;
+  AnimationController _animationController;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: CustomPaint(
         painter: _ColorSonarPainter(
-          animationController: animationController,
+          animationController: _animationController,
           contentAreaRadius: widget.contentAreaRadius,
           waveFall: widget.waveFall,
           waveMotion: widget.waveMotion,
@@ -83,7 +83,7 @@ class _ColorSonarState extends State<ColorSonar>
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
+    _animationController = AnimationController(
       vsync: this,
       duration: widget.duration,
     )..addListener(() {
@@ -93,11 +93,12 @@ class _ColorSonarState extends State<ColorSonar>
 
   @override
   void dispose() {
+    _animationController.dispose();
     super.dispose();
-    animationController.dispose();
   }
 }
 
+/// The painter responsible for drawing the ColorSonar waves.
 class _ColorSonarPainter extends CustomPainter {
   final AnimationController animationController;
   final double contentAreaRadius;
@@ -137,19 +138,20 @@ class _ColorSonarPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     if (!wavesDisabled) {
-      initAnimations();
+      _initAnimations();
 
       // The draw order here matters.
-      drawWave(canvas, size, _outerWaveAnimation.value, outerWaveColor);
-      drawWave(canvas, size, _middleWaveAnimation.value, middleWaveColor);
-      drawWave(canvas, size, _innerWaveAnimation.value, innerWaveColor);
+      _drawWave(canvas, size, _outerWaveAnimation.value, outerWaveColor);
+      _drawWave(canvas, size, _middleWaveAnimation.value, middleWaveColor);
+      _drawWave(canvas, size, _innerWaveAnimation.value, innerWaveColor);
     }
 
     // Must be drawn last.
-    drawWave(canvas, size, contentAreaRadius, contentAreaColor);
+    _drawWave(canvas, size, contentAreaRadius, contentAreaColor);
   }
 
-  void drawWave(Canvas canvas, Size size, double radius, Color color) {
+  /// Draws a wave with the given values.
+  void _drawWave(Canvas canvas, Size size, double radius, Color color) {
     canvas.drawCircle(
       Offset(size.width / 2.0, size.height / 2.0),
       radius,
@@ -157,7 +159,8 @@ class _ColorSonarPainter extends CustomPainter {
     );
   }
 
-  void initAnimations() {
+  /// Initializes the animations.
+  void _initAnimations() {
     if (!wavesDisabled) animationController.repeat();
 
     double innerStart = contentAreaRadius;
@@ -194,6 +197,9 @@ class _ColorSonarPainter extends CustomPainter {
       case WaveMotion.smooth:
         return Interval(0.0, 0.25, curve: waveMotionEffect);
 
+      case WaveMotion.blink:
+        return Interval(0.9, 1.0, curve: waveMotionEffect);
+
       default:
         return Interval(0.0, 1.0, curve: waveMotionEffect);
     }
@@ -206,6 +212,9 @@ class _ColorSonarPainter extends CustomPainter {
 
       case WaveMotion.smooth:
         return Interval(0.25, 0.50, curve: waveMotionEffect);
+
+      case WaveMotion.blink:
+        return Interval(0.5, 0.6, curve: waveMotionEffect);
 
       default:
         return Interval(0.0, 1.0, curve: waveMotionEffect);
@@ -220,11 +229,15 @@ class _ColorSonarPainter extends CustomPainter {
       case WaveMotion.smooth:
         return Interval(0.50, 0.75, curve: waveMotionEffect);
 
+      case WaveMotion.blink:
+        return Interval(0.0, 0.1, curve: waveMotionEffect);
+
       default:
         return Interval(0.0, 1.0, curve: waveMotionEffect);
     }
   }
 
+  /// Creates the animation with the given values.
   Animation _createAnimation({
     double begin = 0.0,
     double end = 1.0,
@@ -242,8 +255,17 @@ class _ColorSonarPainter extends CustomPainter {
   bool shouldRepaint(_ColorSonarPainter oldDelegate) => true;
 }
 
+/// Defines the motion in which the waves should transmit.
 enum WaveMotion {
+  /// Waves are transmitted immediately one after the other.
   smooth,
+
+  /// Waves are transmitted shortly one after the other.
   stepped,
+
+  /// Waves are transmitted synchronously.
   synced,
+
+  /// Waves are transmitted intermittently, resembling an eye blink.
+  blink,
 }

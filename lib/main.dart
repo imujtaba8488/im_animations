@@ -26,13 +26,18 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: ColorSonar(
-              // wavesDisabled: true,
-              // waveMotion: WaveMotion.synced,
-              // waveMotionEffect: Curves.bounceOut,
-              // duration: Duration(seconds: 5),
-              ),
+        child: ColorSonar(
+          // wavesDisabled: true,
+          // waveMotion: WaveMotion.synced,
+          contentAreaRadius: 48.0,
+          waveFall: 15.0,
+          // waveMotionEffect: Curves.elasticIn,
+          waveMotion: WaveMotion.synced,
+          // duration: Duration(seconds: 5),
+          child: CircleAvatar(
+            radius: 48.0,
+            backgroundImage: AssetImage('assets/avatars/man.png'),
+          ),
         ),
       ),
     );
