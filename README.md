@@ -11,7 +11,7 @@
 A growing collection of cool, elegant, efficient and performance-optimized
 animation widgets.
 
-## Feedback
+### Feedback
 
 For any feedback please file an issue **[here](https://github.com/imujtaba8488/im_animations/issues).** Please **Like** to **support**
 
@@ -27,4 +27,6 @@ For any feedback please file an issue **[here](https://github.com/imujtaba8488/i
 
 ### Usage Notes
 
-Simply import `package:im_animations/im_animations.dart` and use any animation.
+* Simply import `package:im_animations/im_animations.dart` and use any animation.
+
+* ColorSonar looks better when the outer colors are lighter than the innermost color.
