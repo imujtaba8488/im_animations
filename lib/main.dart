@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:im_animations/src/sonar2.dart';
+import 'package:im_animations/src/color_sonar.dart';
 
 import 'im_animations.dart';
 
@@ -27,7 +27,12 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Sonar2(),
+          child: ColorSonar(
+              // wavesDisabled: true,
+              // waveMotion: WaveMotion.synced,
+              // waveMotionEffect: Curves.bounceOut,
+              // duration: Duration(seconds: 5),
+              ),
         ),
       ),
     );
