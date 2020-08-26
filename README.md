@@ -13,11 +13,9 @@ animation widgets.
 
 ## Feedback
 
-For any feedback please file an issue **[here](https://github.com/imujtaba8488/im_animations/issues).**
+For any feedback please file an issue **[here](https://github.com/imujtaba8488/im_animations/issues).** Please **Like** to **support**
 
-Please **Like** to **support**
-
-## List of Animations
+## List of Available Animations
 
 | **Animation** | **Description**                                 | **Demo**                                                                                             | **Version Available** |
 |---------------|-------------------------------------------------|------------------------------------------------------------------------------------------------------|-----------------------|
