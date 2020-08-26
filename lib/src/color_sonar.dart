@@ -60,7 +60,7 @@ class _ColorSonarState extends State<ColorSonar>
   Widget build(BuildContext context) {
     return Container(
       child: CustomPaint(
-        painter: ColorSonarPainter(
+        painter: _ColorSonarPainter(
           animationController: animationController,
           contentAreaRadius: widget.contentAreaRadius,
           waveFall: widget.waveFall,
@@ -98,7 +98,7 @@ class _ColorSonarState extends State<ColorSonar>
   }
 }
 
-class ColorSonarPainter extends CustomPainter {
+class _ColorSonarPainter extends CustomPainter {
   final AnimationController animationController;
   final double contentAreaRadius;
   final double waveFall;
@@ -115,7 +115,7 @@ class ColorSonarPainter extends CustomPainter {
   Animation _middleWaveAnimation;
   Animation _outerWaveAnimation;
 
-  ColorSonarPainter({
+  _ColorSonarPainter({
     @required this.animationController,
     this.contentAreaRadius = 24.0,
     this.waveFall = 15.0,
@@ -239,7 +239,7 @@ class ColorSonarPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(ColorSonarPainter oldDelegate) => true;
+  bool shouldRepaint(_ColorSonarPainter oldDelegate) => true;
 }
 
 enum WaveMotion {
