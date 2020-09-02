@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:im_animations/src/color_sonar.dart';
+import 'package:im_animations/src/text_animator.dart';
 
 import 'im_animations.dart';
 
@@ -26,17 +27,10 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ColorSonar(
-          // wavesDisabled: true,
-          // waveMotion: WaveMotion.synced,
-          contentAreaRadius: 48.0,
-          waveFall: 15.0,
-          // waveMotionEffect: Curves.elasticIn,
-          waveMotion: WaveMotion.synced,
-          // duration: Duration(seconds: 5),
-          child: CircleAvatar(
-            radius: 48.0,
-            backgroundImage: AssetImage('assets/avatars/man.png'),
+        child: TextAnimator(
+          Text(
+            '7006106521',
+            style: TextStyle(fontSize: 30.0),
           ),
         ),
       ),
