@@ -11,7 +11,7 @@
 A growing collection of cool, elegant, efficient and performance-optimized
 animation widgets.
 
-### Feedback
+## Feedback
 
 For any feedback please file an issue **[here](https://github.com/imujtaba8488/im_animations/issues).** Please **Like** to **support**
 
