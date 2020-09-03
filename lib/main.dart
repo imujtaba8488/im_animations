@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:im_animations/src/color_sonar.dart';
+import 'package:im_animations/src/float_and_fade.dart';
 import 'package:im_animations/src/text_animator.dart';
+import 'package:im_animations/src/tighten.dart';
 
 import 'im_animations.dart';
 
@@ -25,15 +27,6 @@ class MyApp extends StatelessWidget {
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: TextAnimator(
-          Text(
-            '7006106521',
-            style: TextStyle(fontSize: 30.0),
-          ),
-        ),
-      ),
-    );
+    return Scaffold();
   }
 }
