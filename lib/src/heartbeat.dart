@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// A widget which adds a heartbeat effect to its contents.
 class HeartBeat extends StatefulWidget {
   /// The item to apply the heartbeat effect to.
-  final Widget child;
+  final Widget? child;
 
   /// The number of beats per minutes. Defaults to 70.
   final int beatsPerMinute;
@@ -20,8 +20,8 @@ class HeartBeat extends StatefulWidget {
 
 class _HeartBeatState extends State<HeartBeat>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation _beatForward, _beatBackward;
+  late AnimationController _controller;
+  late Animation _beatForward, _beatBackward;
 
   @override
   void initState() {

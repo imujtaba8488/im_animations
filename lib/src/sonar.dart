@@ -25,7 +25,7 @@ class Sonar extends StatefulWidget {
 
   Sonar({
     this.radius = 24.0,
-    @required this.child,
+    required this.child,
     this.waveThickness = 0.5,
     this.waveColor = Colors.blue,
     this.duration = const Duration(seconds: 1),
@@ -45,7 +45,7 @@ class Sonar extends StatefulWidget {
 }
 
 class _SonarState extends State<Sonar> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -88,7 +88,7 @@ class _SonarState extends State<Sonar> with SingleTickerProviderStateMixin {
           height: radius,
           width: radius,
           child: Center(
-            child: widget?.child,
+            child: widget.child,
           ),
         ),
       ),
