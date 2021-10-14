@@ -11,7 +11,7 @@ enum RotationDirection {
 /// A widget which rotates its child(ren).
 class Rotate extends StatefulWidget {
   /// The item to be rotated.
-  final Widget child;
+  final Widget? child;
 
   /// The number of rotations per minute. Defaults to 70.
   final int rotationsPerMinute;
@@ -36,8 +36,8 @@ class Rotate extends StatefulWidget {
 }
 
 class _RotateState extends State<Rotate> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation animation;
+  late AnimationController _animationController;
+  late Animation animation;
 
   @override
   void initState() {

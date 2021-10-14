@@ -32,7 +32,7 @@ class ColorSonar extends StatefulWidget {
   final Color outerWaveColor;
 
   /// The widget to be placed inside the waves.
-  final Widget child;
+  final Widget /*?*/ child;
 
   ColorSonar({
     this.contentAreaRadius = 24.0,
@@ -45,7 +45,7 @@ class ColorSonar extends StatefulWidget {
     this.innerWaveColor = const Color(0xFF696969),
     this.middleWaveColor = const Color(0xFFA9A9A9),
     this.outerWaveColor = const Color(0xFFDCDCDC),
-    this.child,
+    required this.child,
   });
 
   @override
@@ -54,7 +54,7 @@ class ColorSonar extends StatefulWidget {
 
 class _ColorSonarState extends State<ColorSonar>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class _ColorSonarState extends State<ColorSonar>
           outerWaveColor: widget.outerWaveColor,
         ),
         child: Center(
-          child: widget?.child,
+          child: widget.child,
         ),
       ),
     );
@@ -112,12 +112,12 @@ class _ColorSonarPainter extends CustomPainter {
   final Color middleWaveColor;
   final Color outerWaveColor;
 
-  Animation _innerWaveAnimation;
-  Animation _middleWaveAnimation;
-  Animation _outerWaveAnimation;
+  late Animation _innerWaveAnimation;
+  late Animation _middleWaveAnimation;
+  late Animation _outerWaveAnimation;
 
   _ColorSonarPainter({
-    @required this.animationController,
+    required this.animationController,
     this.contentAreaRadius = 24.0,
     this.waveFall = 15.0,
     this.wavesDisabled = false,

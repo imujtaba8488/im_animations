@@ -9,7 +9,7 @@ enum FadeEffect {
 /// A widget which fades its child(ren) based on the [FadeEffect].
 class Fade extends StatefulWidget {
   /// The item to fade.
-  final Widget child;
+  final Widget? child;
 
   /// The duration of the [fadeEffect].
   final Duration duration;
@@ -30,7 +30,7 @@ class Fade extends StatefulWidget {
 }
 
 class _FadeState extends State<Fade> with SingleTickerProviderStateMixin {
-  AnimationController _fadeAnimation;
+  late AnimationController _fadeAnimation;
 
   @override
   void initState() {

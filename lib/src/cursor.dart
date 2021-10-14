@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 class Cursor extends StatefulWidget {
   final Widget child;
 
-  Cursor({@required this.child});
+  Cursor({required this.child});
 
   @override
   _CursorState createState() => _CursorState();
 }
 
 class _CursorState extends State<Cursor> with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation cursor;
+  late AnimationController controller;
+  late Animation cursor;
 
   @override
   Widget build(BuildContext context) {
