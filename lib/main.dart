@@ -28,17 +28,17 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: ColorSonar(
           // wavesDisabled: true,
           // waveMotion: WaveMotion.synced,
           contentAreaRadius: 48.0,
-          waveFall: 15.0,
+          // waveFall: 100.0,
           // waveMotionEffect: Curves.elasticIn,
           waveMotion: WaveMotion.synced,
-          // duration: Duration(seconds: 5),
-          child: const CircleAvatar(
+          // duration: Duration(milliseconds: 2000),
+          child: CircleAvatar(
             radius: 48.0,
             backgroundImage: AssetImage('assets/avatars/man.png'),
           ),
