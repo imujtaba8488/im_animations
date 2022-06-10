@@ -11,6 +11,19 @@
 A growing collection of cool, elegant, efficient and performance-optimized
 animation widgets.
 
+## Upcoming animations
+* Bounce
+* Flash
+* Pulse
+* RubberBand
+* Shake X and Y
+* Text animations, etc
+
+__Note:__ Please like to support this package.
+
+A growing collection of cool, elegant, efficient and performance-optimized
+animation widgets.
+
 ## Feedback
 
 For any feedback please file an issue **[here](https://github.com/imujtaba8488/im_animations/issues).** Please **Like** to **support**
