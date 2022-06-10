@@ -43,3 +43,7 @@ For any feedback please file an issue **[here](https://github.com/imujtaba8488/i
 * Simply import `package:im_animations/im_animations.dart` and use any animation.
 
 * ColorSonar looks better when the outer colors are lighter than the innermost color.
+
+
+### Contributors
+<img src="https://avatars.githubusercontent.com/u/44292521?v=4" alt="Shashwat" width="50"/>

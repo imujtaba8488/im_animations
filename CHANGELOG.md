@@ -4,9 +4,9 @@
 
 ### Friday, 09th July, 2022
 
-* Migrate package on pub.dev to null safety - Thank you [Shashwat](https://github.com/shashwatxx)
 * Add Mac OS support
 * Fix Android 2 embedding issue
+* Migrate package on pub.dev to null safety - Thank you [Shashwat](https://github.com/shashwatxx)
 
 ## 0.1.1
 
