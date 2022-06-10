@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class Cursor extends StatefulWidget {
   final Widget child;
 
-  Cursor({required this.child});
+  const Cursor({Key? key, required this.child}) : super(key: key);
 
   @override
-  _CursorState createState() => _CursorState();
+  CursorState createState() => CursorState();
 }
 
-class _CursorState extends State<Cursor> with SingleTickerProviderStateMixin {
+class CursorState extends State<Cursor> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation cursor;
 
@@ -31,10 +31,8 @@ class _CursorState extends State<Cursor> with SingleTickerProviderStateMixin {
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
-    )..addListener(() {
-        setState(() {});
-      });
+      duration: const Duration(milliseconds: 500),
+    )..addListener(() => setState(() {}));
 
     cursor = Tween(begin: 0.0, end: 1.0).animate(controller);
 
