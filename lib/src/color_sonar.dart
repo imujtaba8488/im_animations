@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
 class ColorSonar extends StatefulWidget {
+  const ColorSonar({
+    Key? key,
+    this.contentAreaRadius = 24.0,
+    this.waveFall = 15.0,
+    this.waveMotion = WaveMotion.synced,
+    this.waveMotionEffect = Curves.easeOut,
+    this.duration = const Duration(seconds: 1),
+    this.wavesDisabled = false,
+    this.contentAreaColor = Colors.white,
+    this.innerWaveColor = const Color(0xFF696969),
+    this.middleWaveColor = const Color(0xFFA9A9A9),
+    this.outerWaveColor = const Color(0xFFDCDCDC),
+    required this.child,
+  }) : super(key: key);
+
   /// The radius of the content area.
   final double contentAreaRadius;
 
@@ -17,7 +32,7 @@ class ColorSonar extends StatefulWidget {
   final Duration duration;
 
   /// Whether the waves are disabled or not.
-  final wavesDisabled;
+  final bool wavesDisabled;
 
   /// The background color of the content area.
   final Color contentAreaColor;
@@ -34,50 +49,13 @@ class ColorSonar extends StatefulWidget {
   /// The widget to be placed inside the waves.
   final Widget /*?*/ child;
 
-  ColorSonar({
-    this.contentAreaRadius = 24.0,
-    this.waveFall = 15.0,
-    this.waveMotion = WaveMotion.synced,
-    this.waveMotionEffect = Curves.easeOut,
-    this.duration = const Duration(seconds: 1),
-    this.wavesDisabled = false,
-    this.contentAreaColor = Colors.white,
-    this.innerWaveColor = const Color(0xFF696969),
-    this.middleWaveColor = const Color(0xFFA9A9A9),
-    this.outerWaveColor = const Color(0xFFDCDCDC),
-    required this.child,
-  });
-
   @override
-  _ColorSonarState createState() => _ColorSonarState();
+  ColorSonarState createState() => ColorSonarState();
 }
 
-class _ColorSonarState extends State<ColorSonar>
+class ColorSonarState extends State<ColorSonar>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: CustomPaint(
-        painter: _ColorSonarPainter(
-          animationController: _animationController,
-          contentAreaRadius: widget.contentAreaRadius,
-          waveFall: widget.waveFall,
-          waveMotion: widget.waveMotion,
-          waveMotionEffect: widget.waveMotionEffect,
-          wavesDisabled: widget.wavesDisabled,
-          contentAreaColor: Colors.white,
-          innerWaveColor: widget.innerWaveColor,
-          middleWaveColor: widget.middleWaveColor,
-          outerWaveColor: widget.outerWaveColor,
-        ),
-        child: Center(
-          child: widget.child,
-        ),
-      ),
-    );
-  }
 
   @override
   void initState() {
@@ -89,6 +67,27 @@ class _ColorSonarState extends State<ColorSonar>
     )..addListener(() {
         setState(() {});
       });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _ColorSonarPainter(
+        animationController: _animationController,
+        contentAreaRadius: widget.contentAreaRadius,
+        waveFall: widget.waveFall,
+        waveMotion: widget.waveMotion,
+        waveMotionEffect: widget.waveMotionEffect,
+        wavesDisabled: widget.wavesDisabled,
+        contentAreaColor: Colors.white,
+        innerWaveColor: widget.innerWaveColor,
+        middleWaveColor: widget.middleWaveColor,
+        outerWaveColor: widget.outerWaveColor,
+      ),
+      child: Center(
+        child: widget.child,
+      ),
+    );
   }
 
   @override
