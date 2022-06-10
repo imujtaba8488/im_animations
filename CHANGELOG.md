@@ -1,10 +1,10 @@
 # ChangeLog
 
-## 0.1.1
+## 0.1.2
 
-### Wednesday, 26th August, 2020
+### Friday, 09th July, 2022
 
-* Migrate package on pub.dev to null safety
+* Migrate package on pub.dev to null safety - Thank you [Shashwat](https://github.com/shashwatxx)
 * Add Mac OS support
 * Fix Android 2 embedding issue
 
