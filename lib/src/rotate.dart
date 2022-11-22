@@ -66,15 +66,17 @@ class _RotateState extends State<Rotate> with SingleTickerProviderStateMixin {
         .animate(_animationController);
 
     widget.repeat
-        ? _animationController.repeat().orCancel
+        ? _animationController.repeat()
         : _animationController.forward();
   }
 
   @override
   void didUpdateWidget(Rotate oldWidget) {
-    _animationController.reset();
-    _animationController.forward().orCancel;
     super.didUpdateWidget(oldWidget);
+    _animationController.reset();
+    widget.repeat
+        ? _animationController.repeat()
+        : _animationController.forward();
   }
 
   @override

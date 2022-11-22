@@ -1,7 +1,6 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-
 import 'im_animations.dart';
-import 'src/color_sonar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,24 +22,52 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
 
   @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  bool changeAnim = true;
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: ColorSonar(
-          // wavesDisabled: true,
-          // waveMotion: WaveMotion.synced,
-          contentAreaRadius: 48.0,
-          // waveFall: 100.0,
-          // waveMotionEffect: Curves.elasticIn,
-          waveMotion: WaveMotion.synced,
-          // duration: Duration(milliseconds: 2000),
-          child: CircleAvatar(
-            radius: 48.0,
-            backgroundImage: AssetImage('assets/avatars/man.png'),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              changeAnim
+                  ? HeartBeat(
+                      child: const CircleAvatar(
+                        radius: 48.0,
+                        backgroundImage: AssetImage('assets/avatars/man.png'),
+                      ),
+                    )
+                  : Rotate(
+                      repeat: Random().nextBool(),
+                      child: const CircleAvatar(
+                        radius: 48.0,
+                        backgroundImage: AssetImage('assets/avatars/man.png'),
+                      ),
+                    ),
+              const SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                  onPressed: () => setState(() => changeAnim = !changeAnim),
+                  child: const Text('Change animation')),
+              const SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                  onPressed: () => setState(
+                        () {},
+                      ),
+                  child: const Text('Testing didUpdateWidget method'))
+            ],
           ),
         ),
       ),

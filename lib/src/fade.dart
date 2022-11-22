@@ -43,19 +43,18 @@ class _FadeState extends State<Fade> with SingleTickerProviderStateMixin {
       });
 
     widget.fadeEffect == FadeEffect.fadeIn
-        ? _fadeAnimation.forward(from: 0.0).orCancel
-        : _fadeAnimation.reverse(from: 1.0).orCancel;
+        ? _fadeAnimation.forward(from: 0.0)
+        : _fadeAnimation.reverse(from: 1.0);
   }
 
   @override
   void didUpdateWidget(Fade oldWidget) {
+    super.didUpdateWidget(oldWidget);
     _fadeAnimation.reset();
 
     widget.fadeEffect == FadeEffect.fadeIn
-        ? _fadeAnimation.forward(from: 0.0).orCancel
-        : _fadeAnimation.reverse(from: 1.0).orCancel;
-
-    super.didUpdateWidget(oldWidget);
+        ? _fadeAnimation.forward(from: 0.0)
+        : _fadeAnimation.reverse(from: 1.0);
   }
 
   @override
