@@ -1,10 +1,6 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:im_animations/src/cursor.dart';
-
 import 'im_animations.dart';
-import 'src/color_sonar.dart';
 
 void main() {
   runApp(const MyApp());
