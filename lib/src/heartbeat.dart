@@ -65,13 +65,15 @@ class _HeartBeatState extends State<HeartBeat>
     );
 
     // Since a heartbeat, so repeats infinitely.
-    _controller.repeat().orCancel;
+    _controller.forward();
+    _controller.repeat();
   }
 
   @override
   void didUpdateWidget(HeartBeat oldWidget) {
     _controller.reset();
-    _controller.repeat().orCancel;
+    _controller.forward();
+    _controller.repeat();
     super.didUpdateWidget(oldWidget);
   }
 
